@@ -30,6 +30,11 @@ float Vector::getZ() const{
 	return z;
 }
 
+float Vector::mag() const
+{
+	return sqrt(x*x + y*y + z*z);
+}
+
 float Vector::dot(const Vector& h){
 	return (h.x*x + h.y*y + h.z*z);
 }
@@ -46,6 +51,12 @@ Vector Vector::operator+(const Vector& h){
 
 Vector Vector::operator-(const Vector& h){
 	Vector nu(x-h.x, y-h.y, z-h.z);
+	return nu;
+}
+
+Vector Vector::operator*(const float& h)
+{
+	Vector nu(x * h, y * h, z * h);
 	return nu;
 }
 
